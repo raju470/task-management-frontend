@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# Task Management Application - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend of the Task Management Application, built using the MERN stack (MongoDB, Express, React, Node.js). The application allows users to manage tasks with features like user authentication, task creation, update, deletion,filter the task and mark complete to task.
 
-## Available Scripts
+## Features
+- **User Registration and Login**: Register new users and login with credentials.
+- **Task Management**: Create, update, delete, and toggle the status of tasks.
+- **Responsive UI**: The application is fully responsive, ensuring a good user experience on mobile, tablet, and desktop devices.
+- **API Communication**: Uses Axios to interact with the backend API for data fetching and CRUD operations.
+- **Task Status**: Different icons and styles indicate task status (pending or completed).
+  
+## Technologies Used
+- **React**: Frontend framework
+- **Material-UI (MUI)**: UI components for building responsive designs
+- **Axios**: Promise-based HTTP client for making API requests
+- **React Router DOM**: For navigation between pages
+- **JavaScript (ES6+)**
+- **CSS (with MUI styling)**
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+### Prerequisites
+Make sure you have the following installed on your local machine:
+- **Node.js**: v14 or higher
+- **npm**: Comes with Node.js, used for installing dependencies
+- **A running backend API**: The app assumes the backend API is running on `http://localhost:5000` or the URL specified in the environment variables.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installation
+1. Clone this repository to your local machine:
+    ```bash
+    git clone https://github.com/your-username/task-management-frontend.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd task-management-frontend
+    ```
+3. Install the project dependencies:
+    ```bash
+    npm install
+    ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Environment Variables
+Create a `.env` file in the root of your project and add the following environment variables:
 
-### `npm test`
+You can replace the URL with your backend's production URL if needed.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Running the Application
+To run the development server:
+```bash
+npm start
+```
 
-### `npm run build`
+This will run the app in development mode. Open http://localhost:3000 to view it in the browser.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The page will reload if you make edits. You will also see any lint errors in the console.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Building for Production
+To create a production build:
+```bash
+npm run build
+```
+This will bundle the application into static files for deployment.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Folder Structure
+Here's an overview of the project structure:
+```bash
+├── public                  # Public files (HTML, favicon, etc.)
+├── src                     # Source code for the frontend
+│   ├── api.js              # API request definitions using Axios
+│   ├── components          # Reusable React components
+│   │   ├── AuthForm.js     # Form for login and registration
+│   │   ├── TaskCard.js     # Component for displaying individual tasks
+│   │   ├── Navbar.js       # Navigation bar component
+│   │   └── TaskFormModal.js # Modal for creating/updating tasks
+│   ├── constants           # Constant files (messages, status codes, etc.)
+│   ├── App.js              # Main application component
+│   ├── index.js            # Entry point of the app
+│   ├── styles              # Shared styles for the app
+│   └── utils               # Utility functions (form validation, helpers, etc.)
+└── .env                    # Environment variables
+```
