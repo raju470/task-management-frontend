@@ -131,7 +131,15 @@ const AuthForm = React.memo(() => {
                     >
                         {isLogin ? FORM_LABELS.login : FORM_LABELS.signup}
                     </Button>
-                    <Button onClick={() => setLogin((prev) => !prev)} color="primary" sx={{ marginTop: 1 }}>
+                    <Button
+                        onClick={() => {
+                            setLogin((prev) => !prev);
+                            setFormData({ username: '', email: '', password: '' });
+                            setFormErrors({});
+                        }}
+                        color="primary"
+                        sx={{ marginTop: 1 }}
+                    >
                         {isLogin ? FORM_LABELS.changeToSignup : FORM_LABELS.changeToLogin}
                     </Button>
                 </Box>

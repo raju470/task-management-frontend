@@ -1,4 +1,5 @@
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{4,}$/; // At least 4 characters, including lowercase, uppercase, number, special character
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export const validateForm = (formData, isLogin = false) => {
     const errors = {};
@@ -12,7 +13,7 @@ export const validateForm = (formData, isLogin = false) => {
     if (!isLogin) {
         if (!formData.email) {
             errors.email = 'Email is required';
-        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+        } else if (!emailRegex.test(formData.email)) {
             errors.email = 'Please enter a valid email address';
         }
     }
