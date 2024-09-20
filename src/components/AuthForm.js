@@ -31,13 +31,18 @@ const AuthForm = React.memo(() => {
             }
 
             try {
+                const payload = {
+                    ...formData,
+                    password: btoa(formData.password) 
+                };
+
                 if (!isLogin) {
-                    await register(formData);
+                    await register(payload);
                     showSnackbar('User has registered successfully. Please log in.', 'success');
                     setFormData({ username: '', email: '', password: '' });
                     setLogin(true);
                 } else {
-                    const response = await login(formData);
+                    const response = await login(payload);
                     localStorage.setItem('token', response.data.token);
                     showSnackbar('Logged in successfully', 'success');
                     navigate('/tasks');
